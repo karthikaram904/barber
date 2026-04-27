@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="img/favicon.ico" rel="icon">
+<title>Client Dashboard</title>
+
+<link href="css/style.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Overlay -->
+<div class="bx-overlay" id="bxOverlay"></div>
+
+<!-- Sidebar -->
+<aside class="bx-sidebar" id="bxSidebar">
+
+    <div class="bx-logo">
+        <a href="index.html">
+            <img src="img/sharp-barber-logo.png" alt="Logo">
+        </a>
+    </div>
+
+    <ul class="bx-menu">
+    <li>
+        <a href="dashboard.html">
+            <i class="fa-solid fa-gauge"></i>
+            <span>Dashboard</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="book.html">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Book Appointment</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="stylist.html">
+            <i class="fa-solid fa-user-tie"></i>
+            <span>Stylists</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="service-dash.html">
+            <i class="fa-solid fa-scissors"></i>
+            <span>Services</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="loyalty.html">
+            <i class="fa-solid fa-gift"></i>
+            <span>Loyalty Points</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="logout.html" class="active">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+    </li>
+</ul>
+
+</aside>
+
+<!-- Main Content -->
+<div class="sd-main-wrapper">
+
+   <div class="logout-wrapper">
+
+    <div class="logout-card">
+
+        <div class="logout-icon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+
+        <h2>You Have Been Logged Out</h2>
+
+        <p>
+            Thank you for using our dashboard.  
+            Click below to login again or return to homepage.
+        </p>
+
+        <div class="logout-actions">
+            <a href="login.html" class="btn-primary">Login Again</a>
+            <a href="index.html" class="btn-outline">Go to Homepage</a>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<script>
+
+const bxSidebar = document.getElementById("bxSidebar");
+const bxOverlay = document.getElementById("bxOverlay");
+const bxToggle = document.getElementById("bxToggle");
+
+bxToggle.addEventListener("click", function(){
+    bxSidebar.classList.toggle("bx-active");
+    bxOverlay.classList.toggle("bx-show");
+});
+
+bxOverlay.addEventListener("click", function(){
+    bxSidebar.classList.remove("bx-active");
+    bxOverlay.classList.remove("bx-show");
+});
+
+</script>
+
+</body>
+</html>

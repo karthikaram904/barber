@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="img/favicon.ico" rel="icon">
+<title>Client Dashboard</title>
+
+<link href="css/style.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Overlay -->
+<div class="bx-overlay" id="bxOverlay"></div>
+
+<!-- Sidebar -->
+<aside class="bx-sidebar" id="bxSidebar">
+
+    <div class="bx-logo">
+        <a href="index.html">
+            <img src="img/sharp-barber-logo.png" alt="Logo">
+        </a>
+    </div>
+
+    <ul class="bx-menu">
+    <li>
+        <a href="dashboard.html">
+            <i class="fa-solid fa-gauge"></i>
+            <span>Dashboard</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="book.html">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Book Appointment</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="stylist.html" class="active">
+            <i class="fa-solid fa-user-tie"></i>
+            <span>Stylists</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="service-dash.html">
+            <i class="fa-solid fa-scissors"></i>
+            <span>Services</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="loyalty.html">
+            <i class="fa-solid fa-gift"></i>
+            <span>Loyalty Points</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="logout.html">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+    </li>
+</ul>
+
+</aside>
+
+<!-- Main Content -->
+<div class="sd-main-wrapper">
+
+   <div class="stylist-wrapper">
+
+    <!-- Page Header -->
+    <div class="stylist-header sd-topbar">
+        <i class="fas fa-bars bx-toggle-btn" id="bxToggle"></i>
+       
+            <h2>Stylists</h2>
+            <p>Manage stylist profiles, availability and performance</p>
+        
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="stylist-summary">
+        <div class="sty-card">
+            <h3>12</h3>
+            <p>Total Stylists</p>
+        </div>
+
+        <div class="sty-card">
+            <h3>9</h3>
+            <p>Active Today</p>
+        </div>
+
+        <div class="sty-card">
+            <h3>4.8 ★</h3>
+            <p>Average Rating</p>
+        </div>
+
+        <div class="sty-card">
+            <h3>320</h3>
+            <p>Total Services Done</p>
+        </div>
+    </div>
+
+    <!-- Search & Filter -->
+    <div class="stylist-filters">
+        <input type="text" placeholder="Search stylist name...">
+        <select>
+            <option>All Specializations</option>
+            <option>Hair Specialist</option>
+            <option>Beard Expert</option>
+            <option>Coloring Expert</option>
+        </select>
+        <button class="add-stylist-btn">
+            <i class="fa fa-plus"></i> Add Stylist
+        </button>
+    </div>
+
+    <!-- Stylist Grid -->
+    <div class="stylist-grid">
+
+        <!-- Card 1 -->
+        <div class="stylist-card">
+            <img src="img/team-1.jpg">
+            <div class="stylist-info">
+                <h4>Arun Kumar</h4>
+                <p class="role">Hair Specialist</p>
+
+                <div class="sty-meta">
+                    <span><i class="fa fa-star"></i> 4.9</span>
+                    <span><i class="fa fa-calendar"></i> 120 Bookings</span>
+                </div>
+
+                <p class="description">
+                    6+ years experience in premium hair styling, modern fades and bridal grooming.
+                </p>
+
+                <div class="sty-actions">
+                    <button class="view-btn">View</button>
+                    <button class="edit-btn">Edit</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="stylist-card">
+            <img src="img/team-2.jpg">
+            <div class="stylist-info">
+                <h4>Vijay Raj</h4>
+                <p class="role">Beard Expert</p>
+
+                <div class="sty-meta">
+                    <span><i class="fa fa-star"></i> 4.7</span>
+                    <span><i class="fa fa-calendar"></i> 98 Bookings</span>
+                </div>
+
+                <p class="description">
+                    Specialist in beard shaping, grooming consultation and premium styling.
+                </p>
+
+                <div class="sty-actions">
+                    <button class="view-btn">View</button>
+                    <button class="edit-btn">Edit</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="stylist-card">
+            <img src="img/team-3.jpg">
+            <div class="stylist-info">
+                <h4>Karthik</h4>
+                <p class="role">Coloring Expert</p>
+
+                <div class="sty-meta">
+                    <span><i class="fa fa-star"></i> 4.8</span>
+                    <span><i class="fa fa-calendar"></i> 102 Bookings</span>
+                </div>
+
+                <p class="description">
+                    Creative hair coloring specialist with modern techniques & trending styles.
+                </p>
+
+                <div class="sty-actions">
+                    <button class="view-btn">View</button>
+                    <button class="edit-btn">Edit</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<script>
+
+const bxSidebar = document.getElementById("bxSidebar");
+const bxOverlay = document.getElementById("bxOverlay");
+const bxToggle = document.getElementById("bxToggle");
+
+bxToggle.addEventListener("click", function(){
+    bxSidebar.classList.toggle("bx-active");
+    bxOverlay.classList.toggle("bx-show");
+});
+
+bxOverlay.addEventListener("click", function(){
+    bxSidebar.classList.remove("bx-active");
+    bxOverlay.classList.remove("bx-show");
+});
+
+</script>
+
+</body>
+</html>

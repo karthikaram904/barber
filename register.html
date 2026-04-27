@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register</title>
+<link href="img/favicon.ico" rel="icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="css/style.css" rel="stylesheet">
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+/* Background */
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: #fff;
+}
+
+/* Card */
+.register-box{
+    width:100%;
+    max-width:420px;
+    background:  linear-gradient(135deg,#0f0f0f,#1f1f1f);
+    backdrop-filter: blur(15px);
+    padding:45px 35px;
+    border-radius:15px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.6);
+    text-align:center;
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+/* Logo */
+.register-box img{
+    width:180px;
+    margin-bottom:25px;
+}
+
+/* Title */
+.register-box h2{
+    color:#fff;
+    margin-bottom:25px;
+    font-weight:600;
+}
+
+/* Inputs */
+.register-box input{
+    width:100%;
+    padding:14px;
+    margin-bottom:18px;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,0.1);
+    background:rgba(255,255,255,0.08);
+    color:#fff;
+    outline:none;
+    transition:0.3s;
+}
+
+.register-box input:focus{
+    border-color:#D9842F;
+    box-shadow:0 0 10px rgba(191,148,86,0.4);
+}
+
+/* Button */
+.register-box button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    background:#D9842F;
+    color:#111;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.register-box button:hover{
+    background:#fff;
+}
+
+/* Bottom Link */
+.login-link{
+    margin-top:25px;
+    color:#ccc;
+    font-size:14px;
+}
+
+.login-link a{
+    color:#D9842F;
+    text-decoration:none;
+    font-weight:500;
+}
+
+/* Password field with eye icon */
+.password-wrap {
+    position: relative;
+    margin-bottom: 18px;
+}
+
+.password-wrap input {
+    width: 100%;
+    margin-bottom: 0;
+    padding-right: 42px;
+}
+
+.password-wrap .eye-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #aaa;
+    font-size: 15px;
+}
+
+.password-wrap .eye-icon:hover {
+    color: #fff;
+}
+
+/* Social login */
+.social-login {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-login p {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.social-btn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.85;
+}
+
+.facebook { background: #1877f2; }
+.google   { background: #db4437; }
+.twitter  { background: #1da1f2; }
+.apple    { background: #000; }
+
+/* Responsive */
+@media(max-width:480px){
+    .register-box{
+        margin:20px;
+        padding:35px 25px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="register-box">
+
+    <a href="index.html">
+        <img src="img/sharp-barber-logo.png" alt="Logo">
+    </a>
+
+    <h2>Create Account</h2>
+
+    <form>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+
+        <div class="password-wrap">
+            <input type="password" id="reg-password" placeholder="Password" required>
+            <span class="eye-icon" data-target="reg-password"><i class="fa fa-eye"></i></span>
+        </div>
+
+        <div class="password-wrap">
+            <input type="password" id="reg-confirm" placeholder="Confirm Password" required>
+            <span class="eye-icon" data-target="reg-confirm"><i class="fa fa-eye"></i></span>
+        </div>
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <div class="social-login">
+        <p>Or sign up using</p>
+        <div class="social-icons">
+            <a href="#" class="social-btn facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="social-btn google"><i class="fa-brands fa-google"></i></a>
+            <a href="#" class="social-btn twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-btn apple"><i class="fa-brands fa-apple"></i></a>
+        </div>
+    </div>
+
+    <div class="login-link">
+        Already have an account? <a href="login.html">Login</a>
+    </div>
+
+</div>
+
+<script>
+    document.querySelectorAll('.eye-icon').forEach(function(icon) {
+        icon.addEventListener('click', function() {
+            var inputId = this.getAttribute('data-target');
+            var input = document.getElementById(inputId);
+            var i = this.querySelector('i');
+            if (input.type === 'password') {
+                input.type = 'text';
+                i.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                input.type = 'password';
+                i.classList.replace('fa-eye-slash', 'fa-eye');
+            }
+        });
+    });
+</script>
+</body>
+</html>

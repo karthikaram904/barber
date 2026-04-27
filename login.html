@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="img/favicon.ico" rel="icon">
+<title>Login</title>
+<!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Full screen center fix */
+body{
+    font-family:'Segoe UI', sans-serif;
+    background: #fff;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.social-login {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-login p {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #777;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+        .apple {
+    background: #000;
+    color: #fff;
+}
+
+.social-btn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+/* Brand Colors */
+.facebook {
+    background: #1877f2;
+    color:#fff;
+}
+
+.google {
+    background: #db4437;
+    color: #fff;
+}
+
+.twitter {
+    background: #1da1f2;
+    color: #fff;
+}
+
+/* Hover Effect */
+.social-btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+.eye-icon {
+  position: absolute;
+  right:12px;
+  top: 40%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.eye-icon {
+  color: #777;
+}
+
+.eye-icon:hover {
+  color: #000;
+}
+        .password-group {
+  position: relative;
+}
+
+.password-group input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.welcome-msg {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ccc;
+  cursor: pointer;
+  margin: 0;
+}
+
+.remember-me input[type="checkbox"] {
+  width: 15px !important;
+  height: 15px !important;
+  min-width: 15px;
+  padding: 0 !important;
+  margin: 0 !important;
+  cursor: pointer;
+  accent-color: #D9842F;
+  flex-shrink: 0;
+}
+
+.forgot-link {
+  color: #D9842F;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+
+    <div class="login-logo">
+        <a href="index.html" class="navbar-brand"><img src="img/sharp-barber-logo.png"></a>
+    </div>
+
+    <p class="welcome-msg">Welcome back! Please login to your account.</p>
+    <h2>Login</h2>
+
+    <form>
+        <input type="email" placeholder="Email Address" required>
+        <div class="input-group password-group">
+    <input type="password" id="password" placeholder="Password" required>
+    <span id="togglePassword" class="eye-icon">👁️</span>
+  </div>  
+
+        <div class="remember-forgot">
+            <label class="remember-me">
+                <input type="checkbox" id="rememberMe"> Remember Me
+            </label>
+            <a href="#" class="forgot-link">Forgot Password?</a>
+        </div>
+
+        <button type="submit">Login</button>
+    </form>
+
+<div class="social-login">
+    <p>Or sign in using</p>
+
+    <div class="social-icons">
+        <a href="#" class="social-btn facebook">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a href="#" class="social-btn google">
+            <i class="fa-brands fa-google"></i>
+        </a>
+
+        <a href="#" class="social-btn twitter">
+            <i class="fa-brands fa-twitter"></i>
+        </a>
+            <a href="#" class="social-btn apple">
+    <i class="fa-brands fa-apple"></i>
+</a>
+    </div>
+</div>
+    <div class="register-link">
+        Don’t have an account? <a href="register.html">Register</a>
+    </div>
+
+</div>
+<script>
+  const togglePassword = document.getElementById("togglePassword");
+  const password = document.getElementById("password");
+
+  togglePassword.addEventListener("click", () => {
+    const type = password.type === "password" ? "text" : "password";
+    password.type = type;
+
+    // icon change
+    togglePassword.textContent = type === "password" ? "👁️" : "🙈";
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="img/favicon.ico" rel="icon">
+<title>Client Dashboard</title>
+
+<link href="css/style.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Overlay -->
+<div class="bx-overlay" id="bxOverlay"></div>
+
+<!-- Sidebar -->
+<aside class="bx-sidebar" id="bxSidebar">
+
+    <div class="bx-logo">
+        <a href="index.html">
+            <img src="img/sharp-barber-logo.png" alt="Logo">
+        </a>
+    </div>
+
+    <ul class="bx-menu">
+    <li>
+        <a href="dashboard.html" class="active">
+            <i class="fa-solid fa-gauge"></i>
+            <span>Dashboard</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="book.html">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Book Appointment</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="stylist.html">
+            <i class="fa-solid fa-user-tie"></i>
+            <span>Stylists</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="service-dash.html">
+            <i class="fa-solid fa-scissors"></i>
+            <span>Services</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="loyalty.html">
+            <i class="fa-solid fa-gift"></i>
+            <span>Loyalty Points</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="logout.html">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+    </li>
+</ul>
+
+</aside>
+
+<!-- Main Content -->
+<div class="sd-main-wrapper">
+
+    <div class="sd-topbar">
+        <!-- FIX: Added ID -->
+        <i class="fas fa-bars bx-toggle-btn" id="bxToggle"></i>
+
+        <h2>Client Dashboard</h2>
+        <div>Welcome, Karthika 👋</div>
+    </div>
+
+    <!-- Loyalty Points -->
+    <div class="sd-card-box">
+        <h3>Loyalty Points</h3>
+        <div class="sd-loyalty-points">You have 120 Points</div>
+    </div>
+
+    
+    <div class="sd-card-box">
+    <h3>Upcoming Appointments</h3>
+
+    <div class="sd-appointment">
+        <p><strong>Hair Cut</strong> with Arun</p>
+        <span>April 2, 10:30 AM</span>
+    </div>
+
+    <div class="sd-appointment">
+        <p><strong>Beard Trim</strong> with Vijay</p>
+        <span>April 5, 04:00 PM</span>
+    </div>
+</div>
+    <div class="sd-card-box">
+    <h3>Recent Activity</h3>
+
+    <ul class="sd-activity">
+        <li>✔ Booked Hair Cut - March 28</li>
+        <li>✔ Earned 20 loyalty points</li>
+        <li>✔ Completed Beard Trim</li>
+    </ul>
+</div>
+    <div class="sd-card-box">
+    <h3>Quick Actions</h3>
+
+    <div class="sd-actions">
+        <button>Book Now</button>
+        <button>View History</button>
+        <button>Edit Profile</button>
+    </div>
+</div>
+
+    <!-- Booking Interface -->
+    <div class="sd-card-box sd-booking-box">
+        <h3>Book Appointment</h3>
+
+        <select>
+            <option>Select Service</option>
+            <option>Hair Cut</option>
+            <option>Beard Trim</option>
+            <option>Hair Spa</option>
+        </select>
+
+        <input type="date">
+        <input type="time">
+
+        <button>Confirm Booking</button>
+    </div>
+    <!-- Stylist Profiles -->
+    <div class="sd-card-box">
+        <h3>Select Your Stylist</h3>
+        <div class="sd-stylist-grid">
+            <div class="sd-stylist-card">
+                <img src="img/testimonial-1.jpg">
+                <h4>Arun</h4>
+                <p>Hair Specialist</p>
+            </div>
+            <div class="sd-stylist-card">
+                <img src="img/testimonial-2.jpg">
+                <h4>Vijay</h4>
+                <p>Beard Expert</p>
+            </div>
+            <div class="sd-stylist-card">
+                <img src="img/testimonial-3.jpg">
+                <h4>Karthik</h4>
+                <p>Styling Pro</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+const bxSidebar = document.getElementById("bxSidebar");
+const bxOverlay = document.getElementById("bxOverlay");
+const bxToggle = document.getElementById("bxToggle");
+
+bxToggle.addEventListener("click", function(){
+    bxSidebar.classList.toggle("bx-active");
+    bxOverlay.classList.toggle("bx-show");
+});
+
+bxOverlay.addEventListener("click", function(){
+    bxSidebar.classList.remove("bx-active");
+    bxOverlay.classList.remove("bx-show");
+});
+
+</script>
+
+</body>
+</html>

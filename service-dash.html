@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="img/favicon.ico" rel="icon">
+<title>Client Dashboard</title>
+
+<link href="css/style.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Overlay -->
+<div class="bx-overlay" id="bxOverlay"></div>
+
+<!-- Sidebar -->
+<aside class="bx-sidebar" id="bxSidebar">
+
+    <div class="bx-logo">
+        <a href="index.html">
+            <img src="img/sharp-barber-logo.png" alt="Logo">
+        </a>
+    </div>
+
+    <ul class="bx-menu">
+    <li>
+        <a href="dashboard.html">
+            <i class="fa-solid fa-gauge"></i>
+            <span>Dashboard</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="book.html">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Book Appointment</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="stylist.html">
+            <i class="fa-solid fa-user-tie"></i>
+            <span>Stylists</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="service-dash.html" class="active">
+            <i class="fa-solid fa-scissors"></i>
+            <span>Services</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="loyalty.html">
+            <i class="fa-solid fa-gift"></i>
+            <span>Loyalty Points</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="logout.html">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+    </li>
+</ul>
+
+</aside>
+
+<!-- Main Content -->
+<div class="sd-main-wrapper">
+
+   <div class="services-wrapper">
+
+    <!-- Page Header -->
+    <div class="services-header sd-topbar">
+        <i class="fas fa-bars bx-toggle-btn" id="bxToggle"></i>
+        
+            <h2>Services Management</h2>
+            <p>Manage pricing, categories and service availability</p>
+        
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="services-summary">
+        <div class="service-card">
+            <h3>18</h3>
+            <p>Total Services</p>
+        </div>
+
+        <div class="service-card">
+            <h3>6</h3>
+            <p>Popular Services</p>
+        </div>
+
+        <div class="service-card">
+            <h3>₹ 1,20,000</h3>
+            <p>Monthly Revenue</p>
+        </div>
+
+        <div class="service-card">
+            <h3>4.9 ★</h3>
+            <p>Avg Service Rating</p>
+        </div>
+    </div>
+
+    <!-- Add Service Section -->
+    <div class="add-service-section">
+        <h3>Add New Service</h3>
+
+        <div class="add-service-form">
+            <input type="text" placeholder="Service Name">
+            <select>
+                <option>Select Category</option>
+                <option>Hair</option>
+                <option>Beard</option>
+                <option>Coloring</option>
+                <option>Spa</option>
+            </select>
+            <input type="number" placeholder="Price (₹)">
+            <select>
+                <option>Status</option>
+                <option>Active</option>
+                <option>Inactive</option>
+            </select>
+            <button>Add Service</button>
+        </div>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="services-grid">
+
+        <div class="service-box">
+            <div class="service-top">
+                <h4>Premium Hair Cut</h4>
+                <span class="price">₹ 500</span>
+            </div>
+            <p>Professional haircut with wash & styling.</p>
+            <div class="service-meta">
+                <span>Category: Hair</span>
+                <span class="active">Active</span>
+            </div>
+            <div class="service-actions">
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <div class="service-top">
+                <h4>Beard Styling</h4>
+                <span class="price">₹ 300</span>
+            </div>
+            <p>Precision beard trim and shaping.</p>
+            <div class="service-meta">
+                <span>Category: Beard</span>
+                <span class="active">Active</span>
+            </div>
+            <div class="service-actions">
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <div class="service-top">
+                <h4>Hair Spa Treatment</h4>
+                <span class="price">₹ 1200</span>
+            </div>
+            <p>Scalp relaxation treatment.</p>
+            <div class="service-meta">
+                <span>Category: Spa</span>
+                <span class="inactive">Inactive</span>
+            </div>
+            <div class="service-actions">
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<script>
+
+const bxSidebar = document.getElementById("bxSidebar");
+const bxOverlay = document.getElementById("bxOverlay");
+const bxToggle = document.getElementById("bxToggle");
+
+bxToggle.addEventListener("click", function(){
+    bxSidebar.classList.toggle("bx-active");
+    bxOverlay.classList.toggle("bx-show");
+});
+
+bxOverlay.addEventListener("click", function(){
+    bxSidebar.classList.remove("bx-active");
+    bxOverlay.classList.remove("bx-show");
+});
+
+</script>
+
+</body>
+</html>
